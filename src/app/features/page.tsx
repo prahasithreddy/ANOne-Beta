@@ -42,13 +42,13 @@ function FeatureDetail({ icon: Icon, title, description, imageUrl, imageAlt, ima
 
 export default function FeaturesPage() {
   return (
-    <div className="flex flex-col items-center justify-center space-y-20 py-16 px-4 md:px-8 lg:px-16">
+    <div className="container flex flex-col items-center justify-center space-y-20 py-16 px-4 md:px-6">
       {/* Hero Section */}
       <section className="text-center max-w-4xl space-y-6">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
           Explore the Power of ANOne
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
           Discover the comprehensive suite of features designed to streamline your workflow, boost productivity, and drive growth for your business.
         </p>
          <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 mt-4">
@@ -57,7 +57,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* Features Overview Grid */}
-       <section className="w-full max-w-6xl space-y-12">
+       <section className="w-full max-w-7xl space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { icon: Zap, title: "Performance", description: "Blazing fast operations and real-time updates." },
@@ -82,7 +82,7 @@ export default function FeaturesPage() {
 
 
       {/* Detailed Features Section */}
-      <section className="w-full max-w-6xl space-y-24">
+      <section className="w-full max-w-7xl space-y-24">
          <FeatureDetail
             icon={BarChart}
             title="Advanced Analytics Suite"

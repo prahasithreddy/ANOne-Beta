@@ -22,10 +22,13 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center px-4 md:px-6">
+        {/* Logo */}
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Mountain className="h-6 w-6" />
           <span className="font-bold">ANOne</span>
         </Link>
+
+        {/* Desktop Navigation */}
         <nav className="hidden flex-1 items-center gap-6 text-sm font-medium md:flex">
           {navItems.map((item) => (
             <Link
@@ -40,12 +43,16 @@ export function Navbar() {
             </Link>
           ))}
         </nav>
+
+        {/* Desktop Auth Buttons */}
         <div className="hidden items-center gap-4 md:flex">
           <Button variant="ghost">Log in</Button>
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
             <Link href="/pricing">Sign Up</Link>
           </Button>
         </div>
+
+        {/* Mobile Menu Button */}
         <div className="flex flex-1 items-center justify-end md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -56,10 +63,12 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="flex flex-col space-y-6 p-6">
+                 {/* Mobile Logo */}
                 <Link href="/" className="mb-4 flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                   <Mountain className="h-6 w-6" />
                   <span className="font-bold">ANOne</span>
                 </Link>
+                {/* Mobile Navigation */}
                 <nav className="flex flex-col space-y-4">
                   {navItems.map((item) => (
                     <Link
@@ -75,7 +84,8 @@ export function Navbar() {
                     </Link>
                   ))}
                 </nav>
-                <div className="mt-6 flex flex-col space-y-3">
+                {/* Mobile Auth Buttons */}
+                <div className="mt-6 flex flex-col space-y-3 border-t pt-6">
                   <Button variant="outline" onClick={() => setIsOpen(false)}>Log in</Button>
                   <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => setIsOpen(false)}>
                     <Link href="/pricing">Sign Up</Link>

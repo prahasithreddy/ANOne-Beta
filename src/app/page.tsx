@@ -15,17 +15,14 @@ import {
   Verified,
   Scale,
   Wrench,
-  Twitter,
-  Github,
-  Youtube,
-  Slack // Assuming FeatherSlack is available, replaced with Slack
 } from "lucide-react";
 import { cn } from "@/lib/utils"; // Import the cn utility
 
 // Simple component to replicate IconWithBackground functionality
 const IconWithBackground = ({ icon, variant = 'neutral', size = 'medium' }: { icon: React.ReactNode, variant?: string, size?: string }) => {
   const sizeClasses = size === 'small' ? 'p-2' : 'p-3';
-  const bgClass = variant === 'neutral' ? 'bg-secondary' : 'bg-accent'; // Simplified mapping
+  // Simplified mapping - Ensure your theme supports these background colors
+  const bgClass = variant === 'neutral' ? 'bg-secondary' : 'bg-accent';
   return (
     <div className={cn('inline-flex rounded-lg', sizeClasses, bgClass)}>
       {icon}
@@ -40,13 +37,13 @@ function ModernHomePage() {
       {/* Navbar section removed as it's handled by the main layout */}
 
       {/* Hero Section */}
-      <div className="flex w-full flex-col items-center justify-center gap-6 px-6 py-24">
-        <div className="flex w-full max-w-4xl flex-col items-start gap-12 px-6 py-6 md:px-0 md:py-0">
+      <div className="container flex w-full flex-col items-center justify-center gap-6 px-4 py-24 md:px-6">
+        <div className="flex w-full max-w-7xl flex-col items-start gap-12">
           <div className="flex w-full flex-col items-start gap-6">
-            <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tighter text-foreground md:text-6xl">
+            <h1 className="max-w-4xl text-5xl font-semibold leading-tight tracking-tighter text-foreground md:text-6xl">
               AI-powered assistant for the modern software team
             </h1>
-            <p className="max-w-xl text-xl font-medium leading-normal text-muted-foreground md:text-2xl">
+            <p className="max-w-2xl text-xl font-medium leading-normal text-muted-foreground md:text-2xl">
               Elevate your workflow with intelligent agents. Streamline coding,
               debugging, and project management with AI.
             </p>
@@ -69,22 +66,22 @@ function ModernHomePage() {
       </div>
 
       {/* Main Image */}
-      <div className="flex w-full flex-col items-center justify-center gap-2 px-6">
+      <div className="container flex w-full flex-col items-center justify-center gap-2 px-4 md:px-6">
         <Image
-          className="h-auto w-full max-w-4xl flex-none rounded-lg border object-contain shadow-lg"
+          className="h-auto w-full max-w-7xl flex-none rounded-lg border object-contain shadow-lg"
           src="https://res.cloudinary.com/subframe/image/upload/v1724690099/uploads/302/zxrsheptnqfesqupssbb.png"
           alt="AI Assistant Dashboard Preview"
-          width={1024}
-          height={576} // Aspect ratio approx 16:9
+          width={1280} // Increased width for larger container
+          height={720} // Adjusted height for 16:9 ratio
           priority // Load hero image first
           data-ai-hint="dashboard product screenshot"
         />
       </div>
 
       {/* Logos Section */}
-      <div className="flex w-full flex-col items-center justify-center gap-12 px-6 py-24">
-        <div className="flex w-full max-w-4xl flex-col items-center justify-center gap-12">
-          <div className="flex w-full max-w-3xl flex-col items-center gap-1 text-center">
+      <div className="container flex w-full flex-col items-center justify-center gap-12 px-4 py-24 md:px-6">
+        <div className="flex w-full max-w-7xl flex-col items-center justify-center gap-12">
+          <div className="flex w-full max-w-4xl flex-col items-center gap-1 text-center">
             <span className="text-xl font-medium leading-normal text-foreground">
               Empowering the world&#39;s most innovative dev teams with AI.
             </span>
@@ -117,8 +114,8 @@ function ModernHomePage() {
       </div>
 
       {/* Engineered for AI Section */}
-       <div className="w-full bg-gradient-to-b from-transparent via-secondary/30 to-transparent py-40 px-6">
-        <div className="mx-auto flex w-full max-w-5xl flex-col items-start gap-16">
+       <div className="w-full bg-gradient-to-b from-transparent via-secondary/30 to-transparent py-40 px-4 md:px-6">
+        <div className="container mx-auto flex w-full max-w-7xl flex-col items-start gap-16">
           <div className="flex w-full flex-wrap items-end gap-12">
             <h2 className="grow basis-0 text-5xl font-semibold leading-tight tracking-tighter text-foreground">
               Engineered for AI development
@@ -161,8 +158,8 @@ function ModernHomePage() {
 
 
       {/* Chart Your Future Section */}
-       <div className="w-full bg-gradient-to-b from-secondary/30 to-transparent px-6 pt-40 pb-20">
-          <div className="mx-auto flex w-full max-w-5xl flex-col items-start gap-6">
+       <div className="w-full bg-gradient-to-b from-secondary/30 to-transparent px-4 md:px-6 pt-40 pb-20">
+          <div className="container mx-auto flex w-full max-w-7xl flex-col items-start gap-6">
             <div className="flex w-full flex-col items-start gap-8">
                 <div className="flex w-full flex-col items-start gap-6">
                 <div className="flex items-center gap-2">
@@ -172,11 +169,11 @@ function ModernHomePage() {
                     </span>
                     <ChevronRight className="h-4 w-4 text-foreground" />
                 </div>
-                <h2 className="w-full max-w-3xl text-5xl font-semibold leading-tight tracking-tighter text-foreground">
+                <h2 className="w-full max-w-4xl text-5xl font-semibold leading-tight tracking-tighter text-foreground">
                     Chart your product&#39;s future
                 </h2>
                 </div>
-                <div className="flex w-full max-w-md flex-col items-start">
+                <div className="flex w-full max-w-lg flex-col items-start">
                 <p className="w-full text-lg font-medium leading-normal text-foreground">
                     Harness AI to align your team intelligence.
                 </p>
@@ -190,21 +187,21 @@ function ModernHomePage() {
 
 
       {/* Strategic Planning Image */}
-      <div className="flex w-full flex-col items-center justify-center gap-4 overflow-hidden px-6">
+      <div className="container flex w-full flex-col items-center justify-center gap-4 overflow-hidden px-4 md:px-6">
         <Image
-          className="h-auto max-h-[576px] w-full max-w-5xl flex-none rounded-lg border object-contain shadow-lg"
+          className="h-auto max-h-[720px] w-full max-w-7xl flex-none rounded-lg border object-contain shadow-lg" // Increased max-h
           src="https://res.cloudinary.com/subframe/image/upload/v1724705485/uploads/302/lynkyfusi4ab4z91o69c.png"
           alt="Strategic Planning Interface"
-          width={1024}
-          height={576}
+          width={1280} // Increased width
+          height={720} // Increased height
           data-ai-hint="planning roadmap interface"
         />
       </div>
 
 
       {/* Code Analysis & Test Generation Section */}
-      <div className="flex w-full flex-col items-center px-6 pt-16 pb-24">
-        <div className="flex w-full max-w-5xl flex-wrap items-stretch justify-center border-t border-border">
+      <div className="container flex w-full flex-col items-center px-4 md:px-6 pt-16 pb-24">
+        <div className="flex w-full max-w-7xl flex-wrap items-stretch justify-center border-t border-border">
           <div className="flex min-w-[320px] grow basis-0 flex-col items-start gap-8 px-6 py-12 md:border-r md:border-border md:pr-12">
             <div className="flex w-full flex-col items-start gap-1">
               <h3 className="w-full text-xl font-medium leading-normal text-foreground">
@@ -242,8 +239,8 @@ function ModernHomePage() {
             />
           </div>
         </div>
-        <div className="h-px w-full max-w-5xl flex-none bg-border" />
-         <div className="flex w-full max-w-5xl flex-wrap items-center justify-center gap-6 border-b border-border py-16">
+        <div className="h-px w-full max-w-7xl flex-none bg-border" />
+         <div className="flex w-full max-w-7xl flex-wrap items-center justify-center gap-6 border-b border-border py-16">
            <div className="flex min-w-[320px] grow basis-0 items-center gap-8">
               <div className="flex max-w-md grow basis-0 flex-col items-start gap-6">
                 <h3 className="w-full text-2xl font-medium leading-tight text-foreground">
@@ -278,7 +275,7 @@ function ModernHomePage() {
          </div>
 
         {/* Features Icons Section */}
-        <div className="grid w-full max-w-5xl grid-cols-1 gap-8 py-16 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid w-full max-w-7xl grid-cols-1 gap-8 py-16 md:grid-cols-2 lg:grid-cols-4">
            {[
                 { icon: Sparkles, title: "AI-driven insights", desc: "Uncover hidden patterns in your development process." },
                 { icon: Bell, title: "Smart notifications", desc: "Receive context-aware alerts and reminders." },
@@ -302,8 +299,8 @@ function ModernHomePage() {
 
 
       {/* Supercharge Collaboration Section */}
-       <div className="w-full bg-gradient-to-b from-transparent via-secondary/30 to-transparent py-40 px-6">
-         <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-16">
+       <div className="w-full bg-gradient-to-b from-transparent via-secondary/30 to-transparent py-40 px-4 md:px-6">
+         <div className="container mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-16">
            <div className="flex w-full flex-wrap items-end gap-12">
              <div className="grow basis-0 flex-col items-start gap-6">
                <div className="flex items-center gap-2">
@@ -360,7 +357,7 @@ function ModernHomePage() {
 
       {/* AI Ecosystem Section */}
       <div className="flex w-full flex-col items-center justify-center py-40 bg-gradient-to-b from-transparent via-secondary/30 to-transparent">
-        <div className="flex w-full max-w-5xl flex-wrap items-center justify-center gap-16 px-6 lg:gap-24">
+        <div className="container flex w-full max-w-7xl flex-wrap items-center justify-center gap-16 px-4 md:px-6 lg:gap-24">
           <div className="flex min-w-[320px] grow basis-0 flex-col items-start gap-6 md:py-12">
             <div className="flex w-full flex-col items-start gap-6">
               <div className="flex items-center gap-2">
@@ -433,8 +430,8 @@ function ModernHomePage() {
 
 
       {/* Final CTA Section */}
-      <div className="w-full border-b border-border bg-gradient-to-t from-secondary/30 via-transparent px-6 py-24">
-        <div className="mx-auto flex max-w-5xl grow basis-0 flex-wrap items-end justify-center gap-16">
+      <div className="w-full border-b border-border bg-gradient-to-t from-secondary/30 via-transparent px-4 md:px-6 py-24">
+        <div className="container mx-auto flex max-w-7xl grow basis-0 flex-wrap items-end justify-center gap-16">
           <div className="flex min-w-[320px] grow basis-0 flex-col items-start gap-16">
             <h2 className="w-full whitespace-pre-wrap text-5xl font-semibold leading-tight tracking-tighter text-foreground">
               {"AI today. \nFuture tomorrow."}

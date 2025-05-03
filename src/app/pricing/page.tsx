@@ -63,9 +63,9 @@ export default function PricingPage() {
   const isYearly = false; // Set to true to show yearly prices
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-16 py-16 px-4 md:px-8 lg:px-16">
+    <div className="container flex flex-col items-center justify-center space-y-16 py-16 px-4 md:px-6">
       {/* Header Section */}
-      <section className="text-center max-w-3xl space-y-4">
+      <section className="text-center max-w-4xl space-y-4">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
           Simple, Transparent Pricing
         </h1>
@@ -81,7 +81,7 @@ export default function PricingPage() {
       </section>
 
       {/* Pricing Tiers Section */}
-      <section className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <section className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
         {tiers.map((tier) => (
           <Card key={tier.name} className={`flex flex-col ${tier.variant === 'default' ? 'border-primary shadow-lg' : ''}`}>
             <CardHeader className="text-center">
@@ -122,7 +122,7 @@ export default function PricingPage() {
 
       {/* Feature Comparison Table (Optional - Simplified here) */}
       {/* Consider a dedicated table component for a full comparison */}
-       <section className="w-full max-w-5xl space-y-8">
+       <section className="w-full max-w-7xl space-y-8">
          <h2 className="text-3xl font-bold text-center">Compare Plans</h2>
          {/* Simple comparison list - A table would be better for complex comparisons */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -149,7 +149,7 @@ export default function PricingPage() {
 
 
       {/* FAQ Section */}
-      <section className="w-full max-w-3xl space-y-8">
+      <section className="w-full max-w-4xl space-y-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center">Pricing FAQs</h2>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">

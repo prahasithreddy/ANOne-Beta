@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(geistSans.variable, 'antialiased font-sans')}>
         <Navbar />
+        {/* Removed container from main, pages will add it if needed */}
         <main className="min-h-screen flex flex-col">{children}</main>
         <Footer />
         <Toaster />

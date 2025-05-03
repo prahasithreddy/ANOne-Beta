@@ -6,19 +6,19 @@ import Link from 'next/link';
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col items-center justify-center space-y-20 py-16 px-4 md:px-8 lg:px-16">
+    <div className="container flex flex-col items-center justify-center space-y-20 py-16 px-4 md:px-6">
       {/* Hero Section */}
       <section className="text-center max-w-4xl space-y-6">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
           About ANOne
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
           We're passionate about building software that empowers businesses to achieve more. Learn about our journey, our values, and the team driving ANOne forward.
         </p>
       </section>
 
       {/* Mission & Vision Section */}
-       <section className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+       <section className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
                <Target className="w-8 h-8 text-accent" />
@@ -41,7 +41,7 @@ export default function AboutPage() {
        </section>
 
         {/* Our Values Section */}
-        <section className="w-full max-w-6xl space-y-12">
+        <section className="w-full max-w-7xl space-y-12">
          <div className="text-center space-y-3">
            <h2 className="text-3xl md:text-4xl font-bold">Our Core Values</h2>
            <p className="text-muted-foreground text-lg">The principles that guide everything we do.</p>
@@ -79,7 +79,7 @@ export default function AboutPage() {
 
 
       {/* Company Story Section */}
-       <section className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-secondary py-16 px-8 rounded-lg">
+       <section className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-secondary py-16 px-8 rounded-lg">
          <div>
             <Image
               src="https://picsum.photos/seed/story/600/450"
@@ -102,7 +102,7 @@ export default function AboutPage() {
        </section>
 
        {/* Meet the Team Section */}
-       <section className="w-full max-w-6xl space-y-12">
+       <section className="w-full max-w-7xl space-y-12">
          <div className="text-center space-y-3">
            <h2 className="text-3xl md:text-4xl font-bold">Meet Our Leadership</h2>
            <p className="text-muted-foreground text-lg">The passionate individuals guiding ANOne's vision.</p>
