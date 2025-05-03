@@ -45,7 +45,7 @@ export function Navbar() {
         </nav>
 
         {/* Desktop Auth Buttons */}
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-4 md:flex ml-auto"> {/* Added ml-auto here */}
           <Button variant="ghost">Log in</Button>
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
             <Link href="/pricing">Sign Up</Link>
