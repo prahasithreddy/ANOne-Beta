@@ -18,7 +18,9 @@ import {
   Twitter,
   Github,
   Youtube,
-} from "lucide-react"; // Assuming FeatherSlack is not available, replaced with Github/another suitable icon
+  Slack // Assuming FeatherSlack is available, replaced with Slack
+} from "lucide-react";
+import { cn } from "@/lib/utils"; // Import the cn utility
 
 // Simple component to replicate IconWithBackground functionality
 const IconWithBackground = ({ icon, variant = 'neutral', size = 'medium' }: { icon: React.ReactNode, variant?: string, size?: string }) => {
@@ -32,7 +34,7 @@ const IconWithBackground = ({ icon, variant = 'neutral', size = 'medium' }: { ic
 };
 
 
-export default function ModernHomePage() {
+function ModernHomePage() {
   return (
     <div className="flex h-full w-full flex-col items-center bg-background">
       {/* Navbar section removed as it's handled by the main layout */}
@@ -147,8 +149,8 @@ export default function ModernHomePage() {
                     <span className="grow basis-0 text-lg font-medium leading-normal text-foreground">
                     {feature.title}
                     </span>
-                    <Button variant="ghost" size="icon">
-                      <ArrowRight className="h-5 w-5"/>
+                    <Button variant="ghost" size="icon" asChild>
+                      <Link href="/features"><ArrowRight className="h-5 w-5"/></Link>
                     </Button>
                 </div>
                 </div>
@@ -345,9 +347,9 @@ export default function ModernHomePage() {
                             {feature.desc}
                         </span>
                         </div>
-                        <Button variant="ghost" size="icon">
-                          <ArrowRight className="h-5 w-5"/>
-                        </Button>
+                         <Button variant="ghost" size="icon" asChild>
+                           <Link href="/features"><ArrowRight className="h-5 w-5"/></Link>
+                         </Button>
                     </div>
                 </div>
             ))}
@@ -453,3 +455,5 @@ export default function ModernHomePage() {
     </div>
   );
 }
+
+export default ModernHomePage;
